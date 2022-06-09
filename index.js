@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const connectDB = require("./config/db");
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 5000;
 
 connectDB();
 
@@ -12,4 +12,4 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", require("./routes/userRoutes"));
 
-app.listen(port, () => console.log(`server is starting at port ${port}`));
+app.listen(PORT, () => console.log(`server is starting at port ${PORT}`));
