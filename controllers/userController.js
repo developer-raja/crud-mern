@@ -38,14 +38,14 @@ const getUsers = asyncHandler(async (req, res) => {
 });
 
 // Get user data by id
-const getUser = async (req, res) => {
+const getUser = asyncHandler(async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     res.status(200).json(user);
   } catch (error) {
     res.status(422).json(error);
   }
-};
+});
 
 // Update user data by id
 const updateUser = asyncHandler(async (req, res) => {
